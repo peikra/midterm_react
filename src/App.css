@@ -1,0 +1,13 @@
+
+.App{
+  min-height: 100vh;
+  background-color: #282c34;
+
+}
+
+
+.flex{
+  display: flex;
+  gap: 7px;
+}
+
