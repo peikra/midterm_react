@@ -1,52 +1,29 @@
 import axios from "axios"
 import "./products.css"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import AuthContext from "../../Contexts/AuthContext"
 import { useQuery } from "react-query"
 import request from "../../utils/request"
 import Admin from "../../Admin"
 import Delete from "../../Admin/delete_product"
+import Header from "../../Header"
 
 
 
 
 const Products = ()=>{
 
-    const [name,setname] = useState("")
+    
     const navigate = useNavigate()
-    const token = sessionStorage.getItem('token')
-
-    const [role,setrole] = useState("")
-    const[image,setimage] = useState("")
-    
-    axios({
-        method : "GET",
-        url : " https://api.escuelajs.co/api/v1/auth/profile",
-        
-        headers:{
-            "Authorization" : `Bearer ${token} `
-        }
-
-       }).then((res)=>{
-        console.log(res)
-        setname(res.data.name)
-        setrole(res.data.role)
-        setimage(res.data.avatar)
-        
-       })
-    const {user,setuser} = useContext(AuthContext)
     
     
-
-    const logout = ()=>{
-        sessionStorage.removeItem("user")
-        sessionStorage.removeItem("token")
-        navigate("/login")
-        setuser(null)
-        
-
-    }
+    
+    
+    
+    
+   
+ 
 
     const newproducts = useQuery({
         queryKey :'products', 
@@ -63,6 +40,7 @@ const Products = ()=>{
 
 })
     
+const role = sessionStorage.getItem("role")
     
   
      
@@ -72,17 +50,7 @@ const Products = ()=>{
 
     return(
         <div>
-             <header className="header">
-                <div className="headerdiv">
-                    <h1>{name}</h1>
-                    {role=='admin' ? <Admin/> : <img className="avatar" src={image}  />}
-                    <button onClick={logout} className="logout">Log out</button>
-
-
-                </div>
-
-
-            </header>
+             <Header />
 
             <main>
                 <div>

@@ -1,0 +1,47 @@
+.current {
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.current_movie_title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: chocolate;
+    margin-bottom: 10px;
+}
+
+.current_year{
+    color: darkcyan;
+}
+.current_director{
+    margin-top: 15px;
+    color: blueviolet;
+}
+.genre{
+    margin-top: 15px;
+    color: coral;
+}
+.overwiew{
+    margin-top: 15px;
+    color: darkgray;
+}
+.cast {
+    margin-top: 15px;
+    color: darkolivegreen;
+}
+
+.genre {
+    font-style: italic;
+}
+
+.overwiew {
+    font-size: 16px;
+}
+
+.cast {
+    font-size: 14px;
+}
