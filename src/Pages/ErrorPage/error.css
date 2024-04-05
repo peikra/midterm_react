@@ -1,0 +1,16 @@
+.error-container {
+    text-align: center;
+}
+
+.error-code {
+    font-size: 120px;
+    margin-bottom: 20px;
+    color: #dc3545;
+}
+
+.error-message {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #343a40;
+}
+

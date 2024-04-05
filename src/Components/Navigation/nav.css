@@ -3,31 +3,44 @@
     list-style: none;
 }
 
-li{
+
+
+.Login:hover{
+    color: blue;
+        
+}
+.Registration:hover{
+    color: blue;
+        
+}
+
+.Login{
     margin-left: 30px;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 30px;
     cursor: pointer;
     border: 0;
-    border-radius: 4px;
     font-weight: 600;
     margin: 0 10px;
-    width: 200px;
+    width: 400px;
     padding: 10px 0;
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
     transition: 0.4s;
     color: white;
-    background-color: rgba(104, 85, 224, 1);
     text-align: center;
-    color: black;
-    
     
 }
 
-li:hover{
+.Registration{
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+    border: 0;
+    font-weight: 600;
+    margin: 0 10px;
+    width: 400px;
+    padding: 10px 0;
+    transition: 0.4s;
     color: white;
-    
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-    background-color: rgba(104, 85, 224, 1);
+    text-align: center;
 }
-

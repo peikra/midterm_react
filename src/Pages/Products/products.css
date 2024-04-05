@@ -65,3 +65,13 @@
   height: 80px;
   border-radius: 50%;
 }
+
+.movies{
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.products{
+    text-decoration: none;
+    font-size: 25px;
+}

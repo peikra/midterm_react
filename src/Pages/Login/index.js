@@ -4,6 +4,8 @@ import "./login.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../Contexts/AuthContext";
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../Redux/actions';
 
 
 const Login = ()=>{
@@ -12,6 +14,7 @@ const Login = ()=>{
     const navigate = useNavigate()
 
     const [info,setinfo] = useState('')
+    const dispatch = useDispatch();
 
     
     
@@ -24,33 +27,41 @@ const Login = ()=>{
     const onSubmit = (data) => {
         
         console.log(data)
-        axios({
-            method : "POST",
-            url : "https://api.escuelajs.co/api/v1/auth/login",
-            
-            data : {
-                
-                "email" : data.email,
-                "password" : data.password,
-                
         
-            }
-           }).then((res)=>{
-            console.log(res)
-            sessionStorage.setItem('user', JSON.stringify(data));
-            navigate('products')
-            const info = JSON.stringify(data)
-            setinfo(info)
-            const loggedInUser = sessionStorage.getItem('user');
-            setuser(loggedInUser);
-
-            const token = res.data.access_token
-            sessionStorage.setItem("token",token)
+        
+        axios({
+                method : "POST",
+                url : "https://api.escuelajs.co/api/v1/auth/login",
+                
+                data : {
+                    
+                    "email" : data.email,
+                    "password" : data.password,
+                    
             
-            
-           })
+                }
+               }).then((res)=>{
+                console.log(res)
+                sessionStorage.setItem('user', JSON.stringify(data));
+                navigate('/products')
+                const info = JSON.stringify(data)
+                setinfo(info)
+                const loggedInUser = sessionStorage.getItem('user');
+                setuser(loggedInUser);
+                dispatch(loginUser(data));
+                const token = res.data.access_token
+                sessionStorage.setItem("token",token)
+                
+                
+               })
+       
+           
+        
+    
+        
            
     };
+
     return(
         <>
         

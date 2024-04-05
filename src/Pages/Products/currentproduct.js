@@ -21,6 +21,7 @@ const CurrentProduct = ()=>{
     
 
 })
+
     const index = newproducts?.data?.data.find((element)=>element.id==params.id)
    
     return(

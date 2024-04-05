@@ -47,7 +47,7 @@ const New_Product = () => {
       const navigate = useNavigate()
 
       const back = ()=>{
-        navigate("/login/products")
+        navigate("/products")
 
       }
     
