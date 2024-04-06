@@ -3,17 +3,21 @@ import AuthContext from "../Contexts/AuthContext"
 import { NavLink, useNavigate } from "react-router-dom"
 import Admin from "../Admin"
 import axios from "axios"
+import { useDispatch } from 'react-redux';
+import { logoutUser } from "../Redux/actions"
 
 const Header = () =>{
     const {user,setuser} = useContext(AuthContext)
     
     const navigate = useNavigate()
+    const dispatch = useDispatch();
 
     const logout = ()=>{
         sessionStorage.removeItem("user")
         sessionStorage.removeItem("token")
         navigate("/login")
         setuser(null)
+        dispatch(logoutUser())
         
 
     }
