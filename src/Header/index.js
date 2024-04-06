@@ -18,6 +18,7 @@ const Header = () =>{
         navigate("/login")
         setuser(null)
         dispatch(logoutUser())
+        sessionStorage.removeItem("role")
         
 
     }
